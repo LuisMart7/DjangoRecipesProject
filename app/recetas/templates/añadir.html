@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block mostrar %}
+
+<div class="mt-4 container d-flex justify-content-center">
+    <h1 id="h1-registro">Añadir receta</h1>
+</div>
+  <div class="container d-flex justify-content-center">
+    <form class="justify-content-center" method="POST" enctype="multipart/form-data">{% csrf_token %}
+		<div class="justify-content-center">
+			<p class="card-text">
+			<h5 class="text-primary">Nombre</h5>
+				{{ form.nombre }}
+			</p>
+		</div>
+		<div class="justify-content-center">
+			<p class="card-text">
+			<h5 class="text-primary">Preparación</h5>
+				{{ form.preparación }}
+			</p>
+		</div>
+    <div class="justify-content-center">
+			<p class="card-text">
+			<h5 class="text-primary">Foto</h5>
+				{{ form.foto }}
+			</p>
+		</div>
+		<button type="submit" class="btn btn-outline-success">Enviar</button>
+	</form>
+  </div>
+
+{% endblock %}

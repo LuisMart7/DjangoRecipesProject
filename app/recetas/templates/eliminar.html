@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block mostrar %}
+
+<div class="mt-4 container d-flex justify-content-center">
+    <div class="card card-body">
+        <p>¿Quiere borrar la receta "{{ receta.nombre }}"?</p>
+
+        <form action="{% url 'eliminar' receta.id  %}" method="POST">{% csrf_token %}
+            <a class="btn btn-outline-success" href="{% url 'index' %}">Cancelar</a>
+
+            <button type="submit" class="btn btn-outline-success" >Aceptar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
